@@ -25,8 +25,7 @@ $(document).ready(function() {
       $('#location').text(data.name);
       $('#temperature').text(celTemp + celSymbol);
       $('#sky').text(data.weather[0].description);
-      $('#humidity').text(data.main.humidity + '%');
-      console.log(data);
+      $('#humidity').text('Humidity: ' + data.main.humidity + '%');
     });
   }
 
