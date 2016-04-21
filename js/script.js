@@ -19,7 +19,10 @@ $(document).ready(function() {
   }
 
   function getLocalWeatherData(lat, lon) {
-    var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=metric';
+    var coordinates = lat + '&lon=' + lon;
+    var units = '&units=metric';
+    var apiKey = '&APPID=0e6bfb61dab954b920834902e14fa852';
+    var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + coordinates + units + apiKey;
     $.getJSON(url, function(data) {
       setTemperature(data.main.temp);
       $('#location').text(data.name);
