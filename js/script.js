@@ -1,13 +1,18 @@
 $(document).ready(function() {
-  var metricUnit = true;
   var celTemp = 0;
   var fahTemp = 32;
   var celSymbol = '°C';
   var fahSymbol = '°F';
 
-  $('#temperature').click(changeUnit);
+  $('#celsius').click({scale: 'C'}, changeScale);
+  $('#fahrenheit').click({scale: 'F'}, changeScale);
+
   getLocation();
 
+  /**
+   * Requests the user's position (coordinates). The coordinates are used to
+   * execute the function getLocalWeatherData.
+   */
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -18,6 +23,13 @@ $(document).ready(function() {
     }
   }
 
+  /**
+   * Uses the API OpenWeatherMap to get the weather data and set the values for
+   * the HTML elements. The default scale will be Celsius.
+   *
+   * @param {number} lat - The latitude coordinate.
+   * @param {number} lon - The longitude coordinate.
+   */
   function getLocalWeatherData(lat, lon) {
     var coordinates = lat + '&lon=' + lon;
     var units = '&units=metric';
@@ -25,23 +37,49 @@ $(document).ready(function() {
     var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + coordinates + units + apiKey;
     $.getJSON(url, function(data) {
       setTemperature(data.main.temp);
+      setSelectedScale('C');
       $('#location').text(data.name);
-      $('#temperature').text(celTemp + celSymbol);
+      $('#celsius').text(celSymbol);
+      $('#fahrenheit').text(fahSymbol);
       $('#sky').text(data.weather[0].description);
       $('#humidity').text('Humidity: ' + data.main.humidity + '%');
     });
   }
 
-  function changeUnit() {
-    if (metricUnit) {
-      $('#temperature').text(fahTemp + fahSymbol);
-      metricUnit = false;
-    } else {
-      $('#temperature').text(celTemp + celSymbol);
-      metricUnit = true;
+  /**
+   * Changes the temperature scale (Celsius or Fahrenheit).
+   *
+   * @param {object} event - The scale property. It can be 'C' to celsius or
+   * 'F' to fahrenheit.
+   */
+  function changeScale(event) {
+    setSelectedScale(event.data.scale);
+  }
+
+  /**
+   * Sets the temperature scale (Celsius or Fahrenheit) and add 0.6 of opacity
+   * style for the unselected scale.
+   *
+   * @param {object} event - The scale property. It can be 'C' to celsius or
+   * 'F' to fahrenheit.
+   */
+  function setSelectedScale(scale) {
+    if (scale === 'C') {
+      $('#temperature').text(celTemp);
+      $('#fahrenheit').css('opacity', '0.6');
+      $('#celsius').css('opacity', '1.0');
+    } else if (scale === 'F') {
+      $('#temperature').text(fahTemp);
+      $('#celsius').css('opacity', '0.6');
+      $('#fahrenheit').css('opacity', '1.0');
     }
   }
 
+  /**
+   * Sets the celsius temperature and converts it into fahrenheit scale as well.
+   *
+   * @param {number} celsius - The temperature value in celsius scale.
+   */
   function setTemperature(celsius) {
     celTemp = celsius;
     fahTemp = convertCelToFah(celsius);

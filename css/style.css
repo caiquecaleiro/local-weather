@@ -19,7 +19,7 @@ body {
   float: left;
 }
 
-h1, #temperature, #humidity, #sky {
+h1, #temperature, #humidity, #sky, #celsius, #fahrenheit {
   color: white;
 }
 
@@ -34,4 +34,11 @@ h1, #temperature, #humidity, #sky {
 #info-div, #temp-div, #location-div {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+#temp-unit-div {
+  margin-left: 4px;
+  margin-top: 4px;
+  font-size: 110%;
+  cursor: pointer;
 }
