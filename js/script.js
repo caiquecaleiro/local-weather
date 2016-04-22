@@ -60,7 +60,7 @@ $(document).ready(function() {
    * Sets the temperature scale (Celsius or Fahrenheit) and add 0.6 of opacity
    * style for the unselected scale.
    *
-   * @param {object} event - The scale property. It can be 'C' to celsius or
+   * @param {string} scale - The scale property. It can be 'C' to celsius or
    * 'F' to fahrenheit.
    */
   function setSelectedScale(scale) {
