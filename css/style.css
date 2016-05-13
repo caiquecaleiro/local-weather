@@ -6,11 +6,7 @@ body {
 .weather-data {
   padding: 40px 60px;
   background-color: #000;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -200px;
+  margin: 10% auto;
   opacity: 0.6;
   display: inline-block;
 }
@@ -40,5 +36,8 @@ h1, #temperature, #humidity, #sky, #celsius, #fahrenheit {
   margin-left: 4px;
   margin-top: 4px;
   font-size: 110%;
+}
+
+#celsius, #fahrenheit {
   cursor: pointer;
 }
