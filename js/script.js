@@ -43,6 +43,7 @@ $(document).ready(function() {
       $('#fahrenheit').text(fahSymbol);
       $('#sky').text(data.weather[0].description);
       $('#humidity').text('Humidity: ' + data.main.humidity + '%');
+      setBackgroundImage(data.weather[0].icon);
     });
   }
 
@@ -87,6 +88,72 @@ $(document).ready(function() {
 
   function convertCelToFah(celsius) {
     return Math.round((celsius * 9)/5 + 32);
+  }
+
+  /**
+  * Sets the background image based on the weather status.
+  * @param {string} weatherCode - The icon code from the Weather API.
+  */
+  function setBackgroundImage(weatherCode) {
+    switch (weatherCode) {
+      case '01d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/clear-sky-day.jpg' + ')');
+        break;
+      case '01n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/clear-sky-night.jpg' + ')');
+        break;
+      case '02d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/clear-sky-day.jpg' + ')');
+        break;
+      case '02n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/clear-sky-night.jpg' + ')');
+        break;
+      case '03d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/805e491bf3d225385b6c1d10033b75ff3f295151/img/scattered-clouds-day.jpg' + ')');
+        break;
+      case '03n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/scattered-clouds-night.jpg' + ')');
+        break;
+      case '04d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/805e491bf3d225385b6c1d10033b75ff3f295151/img/scattered-clouds-day.jpg' + ')');
+        break;
+      case '04n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/broken-clouds-night.jpg' + ')');
+        break;
+      case '09d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/rainy-day.jpeg' + ')');
+        break;
+      case '09n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/rainy-night.jpg' + ')');
+        break;
+      case '10d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/rainy-day.jpeg' + ')');
+        break;
+      case '10n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/rainy-night.jpg' + ')');
+        break;
+      case '11d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/thunderstorm-day.jpg' + ')');
+        break;
+      case '11n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/thunderstorm-night.jpg' + ')');
+        break;
+      case '13d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/snow-day.jpg' + ')');
+        break;
+      case '13n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/snow-night.jpg' + ')');
+        break;
+      case '50d':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/misty-day.jpg' + ')');
+        break;
+      case '50n':
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/812e35356cbe85331a339e1e08ed3ad6cd0f8770/img/misty-night.jpg' + ')');
+        break;
+      default:
+        $('body').css('background-image', 'url(' + 'https://raw.githubusercontent.com/caiquecaleiro/local-weather/master/img/cloudy-day.jpg' + ')');
+        break;
+    }
   }
 
 });
