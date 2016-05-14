@@ -1,5 +1,6 @@
 body {
   background: url('https://tau0.files.wordpress.com/2011/10/cloudy_day.jpg');
+  background-size: cover;
   text-align: center;
 }
 
