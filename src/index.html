@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <title>Local Weather</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-data">
+        <div id="location-div">
+          <h1 id="location"></h1>
+          <div>
+            <span id="temperature"></span>
+          </div>
+          <div id="temp-unit-div">
+            <span id="celsius"></span>
+            <span>&nbsp;|&nbsp;<span>
+            <span id="fahrenheit"></span>
+          </div>
+        </div>
+        <div id="info-div">
+          <h1 id="sky"></h1>
+          <h1 id="humidity"></h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+body {
+  background: url('https://raw.githubusercontent.com/caiquecaleiro/local-weather/master/img/cloudy-day.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.weather-data {
+  padding: 40px 60px;
+  background-color: #000;
+  margin: 10% auto;
+  opacity: 0.6;
+  display: inline-block;
+}
+
+.weather-data div {
+  float: left;
+}
+
+h1, #temperature, #humidity, #sky, #celsius, #fahrenheit {
+  color: white;
+}
+
+#temperature {
+  font-size: 200%;
+}
+
+#sky, #humidity {
+  font-size: 120%;
+}
+
+#info-div, #temp-div, #location-div {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#temp-unit-div {
+  margin-left: 4px;
+  margin-top: 4px;
+  font-size: 110%;
+}
+
+#celsius, #fahrenheit {
+  cursor: pointer;
+}
