@@ -3,15 +3,31 @@ This is a project that was required by the FCC: https://www.freecodecamp.com/cha
 
 The app uses these technologies:
 
-* jQuery 1.12.x
-* Bootstrap 3.3.x
-* Font Awesome 4.5.x
+* jQuery 3.1x
+* Bootstrap 3.3x
 
 ## Weather API
 This app uses the OpenWeatherMap API: http://openweathermap.org/api
 
 ## CodePen
 http://codepen.io/caiquecaleiro/full/JXVMeG/
+
+## Installation and usage
+
+Install the npm:
+```bash
+$ npm install
+```
+
+Install the bower:
+```bash
+$ bower install
+```
+
+Use gulp to run:
+```bash
+$ gulp
+```
 
 ## Contributors  
 
