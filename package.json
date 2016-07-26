@@ -2,7 +2,7 @@
   "name": "local-weather",
   "version": "1.0.0",
   "description": "This is a project that was required by the FCC: https://www.freecodecamp.com/challenges/show-the-local-weather",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,0 +1,20 @@
+{
+  "name": "local-weather",
+  "description": "This is a project that was required by the FCC: https://www.freecodecamp.com/challenges/show-the-local-weather",
+  "main": "script.js",
+  "authors": [
+    "Caique Caleiro <caiquecaleiro@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/caiquecaleiro/local-weather",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
